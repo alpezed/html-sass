@@ -1,0 +1,9 @@
+@mixin backgroundImg($url, $repeat: no-repeat, $size: cover, $pos: center center, $height: initial) {
+	@if $url {
+		background-image: url($url);
+		background-repeat: $repeat;
+		background-size: $size;
+		background-position: $pos;
+		height: $height;
+	}
+}
