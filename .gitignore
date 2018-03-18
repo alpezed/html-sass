@@ -1,0 +1,7 @@
+.DS_Store
+bootstrap4/node_modules
+treehouse/node_modules
+.tmp
+.sass-cache
+bootstrap4/src/**/images/*
+treehouse/**/images/*
