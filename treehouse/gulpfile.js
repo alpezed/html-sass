@@ -101,7 +101,7 @@ gulp.task('clean:dist', function() {
 gulp.task('build', ['sass','html','style','scripts','images', 'fonts']);
 
 gulp.task('watch', function() {
-    gulp.watch(path.app.style, ['sass',  'style']);
+    gulp.watch(path.app.style, ['sass', 'style']);
     gulp.watch(path.app.html, ['html']);
     gulp.watch(path.app.js, ['scripts']);
     gulp.watch(path.app.img, ['images']);
