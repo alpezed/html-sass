@@ -100,7 +100,7 @@ gulp.task('clean:dist', function() {
 
 gulp.task('build', ['sass','html','style','scripts','images', 'fonts']);
 
-gulp.task('watch', function() {
+gulp.task('watch', ['browserSync'], function() {
     gulp.watch(path.app.style, ['sass', 'style']);
     gulp.watch(path.app.html, ['html']);
     gulp.watch(path.app.js, ['scripts']);
@@ -109,5 +109,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['clean:dist'], function() {
-    gulp.start('build', 'watch', 'browserSync');
+    gulp.start('build', 'watch');
 });
