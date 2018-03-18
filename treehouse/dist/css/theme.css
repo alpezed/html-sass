@@ -150,7 +150,7 @@ section {
 
 /* ---Main Slide--- */
 .jumbotron-inner {
-  background: url(images/main-img-bg.png) no-repeat transparent;
+  background: url(../images/main-img-bg.png) no-repeat transparent;
   /*background-size: cover;*/
   padding: 120px 0;
   margin-bottom: 86px;
@@ -188,7 +188,7 @@ section {
   margin: 40px 0 20px 0; }
 
 #info {
-  background: url(images/mid-bg.png);
+  background: url(../images/mid-bg.png);
   padding: 100px 0;
   color: #cccccc;
   font-size: 16px;
@@ -216,7 +216,7 @@ section {
 
 .info-block ul.info-list > li {
   padding-left: 45px;
-  background: url(images/c-check.png) no-repeat;
+  background: url(../images/c-check.png) no-repeat;
   line-height: 32px;
   margin-bottom: 10px; }
 
@@ -252,14 +252,14 @@ section {
   margin-bottom: 20px; }
 
 section#latest-project {
-  background: url(images/isometric-ipd-ar.png) no-repeat right 132px;
+  background: url(../images/isometric-ipd-ar.png) no-repeat right 132px;
   padding-bottom: 90px;
   margin-bottom: 0; }
 
 a.view-details {
   color: #7cc576;
   text-transform: uppercase;
-  background: url(images/arrow-right.png) no-repeat right center;
+  background: url(../images/arrow-right.png) no-repeat right center;
   padding-right: 23px; }
 
 a.view-details:hover {
@@ -330,7 +330,7 @@ section#culture-values {
 
 .quote_arrow {
   position: absolute;
-  background: url(images/triagle-left.png) no-repeat left top;
+  background: url(../images/triagle-left.png) no-repeat left top;
   width: 23px;
   height: 25px;
   left: -20px;
@@ -338,7 +338,7 @@ section#culture-values {
   margin-top: -15.5px; }
 
 .quote_arrow2 {
-  background: url(images/triagle-right.png) no-repeat right top;
+  background: url(../images/triagle-right.png) no-repeat right top;
   position: absolute;
   width: 23px;
   height: 25px;
@@ -439,7 +439,7 @@ section#widgets-part h1 {
 .widget ul.tweets > li {
   padding-left: 40px;
   list-style: none;
-  background: url(images/tweeter-icon.png) no-repeat;
+  background: url(../images/tweeter-icon.png) no-repeat;
   margin-bottom: 20px; }
 
 /* --Footer-- */
@@ -461,28 +461,28 @@ ul.social-media a {
   display: inline-block; }
 
 ul.social-media a.tweeter {
-  background: url(images/social-media-icon.png) no-repeat; }
+  background: url(../images/social-media-icon.png) no-repeat; }
 
 ul.social-media a.tweeter:hover {
-  background: url(images/social-media-icon.png) no-repeat 0px -40px; }
+  background: url(../images/social-media-icon.png) no-repeat 0px -40px; }
 
 ul.social-media a.facebook {
-  background: url(images/social-media-icon.png) no-repeat -50px 1px; }
+  background: url(../images/social-media-icon.png) no-repeat -50px 1px; }
 
 ul.social-media a.facebook:hover {
-  background: url(images/social-media-icon.png) no-repeat -50px -40px; }
+  background: url(../images/social-media-icon.png) no-repeat -50px -40px; }
 
 ul.social-media a.pinterest {
-  background: url(images/social-media-icon.png) no-repeat -100px 1px; }
+  background: url(../images/social-media-icon.png) no-repeat -100px 1px; }
 
 ul.social-media a.pinterest:hover {
-  background: url(images/social-media-icon.png) no-repeat -100px -40px; }
+  background: url(../images/social-media-icon.png) no-repeat -100px -40px; }
 
 ul.social-media a.googleplus {
-  background: url(images/social-media-icon.png) no-repeat -150px 1px; }
+  background: url(../images/social-media-icon.png) no-repeat -150px 1px; }
 
 ul.social-media a.googleplus:hover {
-  background: url(images/social-media-icon.png) no-repeat -150px -40px; }
+  background: url(../images/social-media-icon.png) no-repeat -150px -40px; }
 
 @media (min-width: 1200px) {
   .container {
@@ -490,11 +490,11 @@ ul.social-media a.googleplus:hover {
 
 @media only screen and (max-width: 1260px) and (min-width: 1160px) {
   #info {
-    background: url(images/mid-bg.png) -65px 0px; } }
+    background: url(../images/mid-bg.png) -65px 0px; } }
 
 @media only screen and (max-width: 1160px) {
   #info {
-    background: url(images/mid-bg.png) -130px 0px; }
+    background: url(../images/mid-bg.png) -130px 0px; }
   .cs-services-icon:after {
     background: none;
     position: inherit; }
@@ -505,7 +505,7 @@ ul.social-media a.googleplus:hover {
   section#logo-part ul li a {
     width: 100px; }
   #info {
-    background: url(images/mid-bg.png) -480px 0px no-repeat; }
+    background: url(../images/mid-bg.png) -480px 0px no-repeat; }
   .info-block {
     margin: 0px 10px; } }
 
@@ -564,7 +564,7 @@ ul.social-media a.googleplus:hover {
   .jumbotron-inner h1 {
     font-size: 51px; }
   section#latest-project {
-    background: url(images/isometric-ipd-ar.png) no-repeat right 295px;
+    background: url(../images/isometric-ipd-ar.png) no-repeat right 295px;
     background-size: 65%; } }
 
 @media only screen and (max-width: 479px) {
@@ -586,5 +586,5 @@ ul.social-media a.googleplus:hover {
   .jumbotron-inner {
     padding: 80px 0; }
   section#latest-project {
-    background: url(images/isometric-ipd-ar.png) no-repeat right 545px;
+    background: url(../images/isometric-ipd-ar.png) no-repeat right 545px;
     background-size: 55%; } }
