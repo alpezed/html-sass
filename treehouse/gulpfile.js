@@ -38,7 +38,7 @@ gulp.task('browserSync', function() {
 
 gulp.task('sass', function() {
     gulp.src(path.app.style)
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoPrefixer({
             browsers: ['last 2 versions']
         }))
