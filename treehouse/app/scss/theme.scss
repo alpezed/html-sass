@@ -127,7 +127,7 @@ section {
 
 /* Main Slide */
 .jumbotron-inner {
-	@include backgroundImg('../images/mid-bg.png', no-repeat);
+	@include backgroundImg('../images/main-img-bg.png', no-repeat);
 	padding: 120px 0;
 	margin-bottom: 86px;
 	margin-top: 120px;
