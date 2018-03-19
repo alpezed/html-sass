@@ -99,7 +99,7 @@ gulp.task('clean:dist', function() {
     return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
 });
 
-gulp.task('build', ['sass','style','scripts','html','images','fonts']);
+gulp.task('build', ['sass','style','scripts','images','fonts','html']);
 
 gulp.task('watch', ['browserSync'], function() {
     gulp.watch(path.app.style, ['sass', 'style']);
