@@ -31,7 +31,7 @@ var path = {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: 'dist'
+            baseDir: 'dist/'
         }
     });
 });
@@ -78,6 +78,7 @@ gulp.task('html', function() {
 gulp.task('images', function() {
     gulp.src(path.app.img)
         .pipe(cache(imagemin({
+            progressive: true,
             interlaced: true
         })))
         .pipe(gulp.dest(path.dist.img));
@@ -98,7 +99,7 @@ gulp.task('clean:dist', function() {
     return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
 });
 
-gulp.task('build', ['sass','html','style','scripts','images', 'fonts']);
+gulp.task('build', ['sass','style','scripts','html','images','fonts']);
 
 gulp.task('watch', ['browserSync'], function() {
     gulp.watch(path.app.style, ['sass', 'style']);
