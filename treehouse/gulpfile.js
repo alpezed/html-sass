@@ -30,7 +30,9 @@ var path = {
 
 gulp.task('sass', function() {
     gulp.src(path.app.style)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            outputStyle: 'expanded',
+        }).on('error', sass.logError))
         .pipe(autoPrefixer({
             browsers: ['last 2 versions']
         }))
