@@ -10,11 +10,11 @@ h1, .h1, h2, h3, h4, h5, h6 {
 	font-family: $primary-font;
 }
 h1 {
-	font-size: 40px;
+	font-size: $h1-size;
 }
 h4 {
 	color: $body-color;
-	font-size: 18px;
+	font-size: $h4-size;
 }
 img {
 	max-width: 100%;
@@ -78,7 +78,7 @@ section {
 }
 .btn-default {
 	color: #ffffff;
-	font-size: 18px;
+	font-size: $h4-size;
 	background: transparent;
 	text-transform: uppercase;
 	border: 3px solid #fff;
@@ -127,7 +127,7 @@ section {
 
 /* Main Slide */
 .jumbotron-inner {
-	background: url(../images/main-img-bg.png) no-repeat transparent;
+	@include backgroundImg('../images/mid-bg.png', no-repeat);
 	padding: 120px 0;
 	margin-bottom: 86px;
 	margin-top: 120px;
@@ -160,12 +160,12 @@ section {
 	}
 	h4 {
 		color: $secondary-color;
-		font-size: 18px;
+		font-size: $h4-size;
 		margin: 40px 0 20px 0;
 	}
 }
 #info {
-	background: url(../images/mid-bg.png);
+	@include backgroundImg('../images/mid-bg.png', no-repeat);
 	padding: 100px 0;
 	color: #cccccc;
 	font-size: 16px;
@@ -189,8 +189,8 @@ section {
 		    padding: 0;
 		    list-style: none;
 		    > li {
+		    	@include backgroundImg('../images/c-check.png', no-repeat);
 				padding-left: 45px;
-				background: url(../images/c-check.png) no-repeat;
 				line-height: 32px;
 				margin-bottom: 10px;
 			}
@@ -276,20 +276,23 @@ section {
 }
 
 /* Testimonials */
+%tt-fl {
+	float: left;
+}
 .client_profile_pic {
     border-radius: 50%;    
 	margin: 0 0 15px 0;  
 	height: 220px;
 }
 .client_profile {
-    float: left;  
+    @extend %tt-fl;  
     text-align: center;
-}
-.client_profile.flt {
-    float: right;
+    &.flt {
+    	float: right;
+    }
 }
 .quote_section.flt {
-    float: left;
+    @extend %tt-fl;
 }
 .client_section {
     overflow: hidden;
@@ -309,7 +312,7 @@ section {
 	  	font-weight: 100;
 	}
 	span {
-	    font-size: 18px;
+	    font-size: $h4-size;
 	    color: $primary-color;
 	}
 	.quote_arrow {
@@ -342,7 +345,7 @@ section {
 		h1 {
 			color: #ffffff;
 			text-transform: uppercase;
-			font-size: 40px;
+			font-size: $h1-size;
 			font-weight: 700;
 			margin: 0px;
 		}
@@ -380,7 +383,7 @@ section {
 	h1 {
 		margin: 0px 0px 29px 0px;
 		color: #ffffff;
-		font-size: 18px;
+		font-size: $h4-size;
 		text-transform: uppercase;
 	}
 	.widget {

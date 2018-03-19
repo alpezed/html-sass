@@ -1,4 +1,4 @@
-@mixin backgroundImg($url, $repeat: no-repeat, $size: cover, $pos: center center, $height: initial) {
+@mixin backgroundImg($url, $repeat: no-repeat, $size: auto, $pos: center center, $height: initial) {
 	@if $url {
 		background-image: url($url);
 		background-repeat: $repeat;
@@ -7,3 +7,10 @@
 		height: $height;
 	}
 }
+
+@mixin list-reset() {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+

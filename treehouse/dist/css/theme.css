@@ -1,10 +1,10 @@
 body {
   color: #777777;
-  font: 400 14px Montserrat; }
+  font: 400 14px "Montserrat", sans-serif; }
 
 h1, .h1, h2, h3, h4, h5, h6 {
   color: #222222;
-  font-family: Montserrat; }
+  font-family: "Montserrat", sans-serif; }
 
 h1 {
   font-size: 40px; }
@@ -148,7 +148,11 @@ section {
 
 /* Main Slide */
 .jumbotron-inner {
-  background: url(../images/main-img-bg.png) no-repeat transparent;
+  background-image: url("../images/mid-bg.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  height: initial;
   padding: 120px 0;
   margin-bottom: 86px;
   margin-top: 120px; }
@@ -180,7 +184,11 @@ section {
     margin: 40px 0 20px 0; }
 
 #info {
-  background: url(../images/mid-bg.png);
+  background-image: url("../images/mid-bg.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  height: initial;
   padding: 100px 0;
   color: #cccccc;
   font-size: 16px;
@@ -201,8 +209,12 @@ section {
       padding: 0;
       list-style: none; }
       #info .info-block ul.info-list > li {
+        background-image: url("../images/c-check.png");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center center;
+        height: initial;
         padding-left: 45px;
-        background: url(../images/c-check.png) no-repeat;
         line-height: 32px;
         margin-bottom: 10px; }
     #info .info-block .btn-lg {
@@ -276,20 +288,18 @@ section {
     left: 210px; }
 
 /* Testimonials */
+.client_profile, .quote_section.flt {
+  float: left; }
+
 .client_profile_pic {
   border-radius: 50%;
   margin: 0 0 15px 0;
   height: 220px; }
 
 .client_profile {
-  float: left;
   text-align: center; }
-
-.client_profile.flt {
-  float: right; }
-
-.quote_section.flt {
-  float: left; }
+  .client_profile.flt {
+    float: right; }
 
 .client_section {
   overflow: hidden; }
