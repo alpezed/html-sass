@@ -28,14 +28,6 @@ var path = {
     }
 };
 
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'dist/'
-        }
-    });
-});
-
 gulp.task('sass', function() {
     gulp.src(path.app.style)
         .pipe(sass().on('error', sass.logError))
@@ -99,14 +91,20 @@ gulp.task('clean:dist', function() {
     return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
 });
 
-gulp.task('build', ['sass','style','scripts','images','fonts','html']);
+gulp.task('build', ['sass','style','scripts','html','images','fonts']);
 
-gulp.task('watch', ['browserSync'], function() {
+gulp.task('watch', function() {
     gulp.watch(path.app.style, ['sass', 'style']);
     gulp.watch(path.app.js, ['scripts']);
     gulp.watch(path.app.html, ['html']);
     gulp.watch(path.app.img, ['images']);
     gulp.watch(path.app.fonts, ['fonts']);
+
+    browserSync.init({
+        server: {
+            baseDir: 'dist/'
+        }
+    });
 });
 
 gulp.task('default', ['clean:dist'], function() {

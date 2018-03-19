@@ -188,7 +188,7 @@ section {
 		    padding: 0;
 		    list-style: none;
 		    > li {
-		    	@include backgroundImg('../images/c-check.png', no-repeat);
+		    	@include backgroundImg('../images/c-check.png', no-repeat, auto, left);
 				padding-left: 45px;
 				line-height: 32px;
 				margin-bottom: 10px;
