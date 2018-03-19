@@ -11,6 +11,9 @@ h1, .h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	font-size: $h1-size;
+	@include phone {
+		font-size: $h1-size - 10;
+	}
 }
 h4 {
 	color: $body-color;
@@ -126,10 +129,14 @@ section {
 
 /* Main Slide */
 .jumbotron-inner {
-	@include backgroundImg('../images/main-img-bg.png', no-repeat);
+	@include backgroundImg('../images/main-img-bg.png', no-repeat, cover);
 	padding: 120px 0;
 	margin-bottom: 86px;
 	margin-top: 120px;
+	@include phone {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
 	h1 {
 		font-size: 60px;
 		font-weight: 700;
@@ -137,7 +144,7 @@ section {
 		margin: 0 0 40px 0;
 	}
 	h4 {
-		color: #cccccc;
+		color: $grey;
 		font-size: 20px;
 		margin: 0;
 		padding: 0;
@@ -166,9 +173,15 @@ section {
 #info {
 	@include backgroundImg('../images/mid-bg.png', no-repeat);
 	padding: 100px 0;
-	color: #cccccc;
+	color: $grey;
 	font-size: 16px;
 	margin-bottom: 85px;
+	@media only screen and (max-width: 1260px) and (min-width:1160px) {
+		background: url(../images/mid-bg.png) -65px 0px;
+	}
+	@include desktop {
+		background-position: -130px 0;
+	}
 	.info-block {
 	    margin-left: 300px;
 	    h1 {
@@ -183,7 +196,7 @@ section {
 		p {
 			margin-bottom: 20px;
 		}
-		ul.info-list {
+		.info-list {
 		    margin: 0 0 35px 0;
 		    padding: 0;
 		    list-style: none;
@@ -204,6 +217,9 @@ section {
 /* Latest project */
 .dev {
 	padding-right: 180px;
+	@include phone {
+  		padding-right: 0;
+  	}
 	h4 {
 		color: $secondary-color;
 		text-transform: uppercase;
@@ -232,6 +248,10 @@ section {
 	@include backgroundImg('../images/isometric-ipd-ar.png', no-repeat, auto, right 132px);
 	padding-bottom: 90px;
 	margin-bottom: 0;
+	@include phone {
+		background-position-y: 545px;
+		background-size: 55%;
+	}
 }
 .view-details {
 	@include backgroundImg('../images/arrow-right.png', no-repeat, auto, right center);
@@ -245,7 +265,7 @@ section {
 
 /* Culture */
 #culture-values {
-	background-color: #f9f9f9;
+	background-color: $light_grey;
 	padding: 100px 0;
 	.cv-services {
 		h4 {
@@ -253,6 +273,15 @@ section {
 			text-transform: uppercase;
 			color: $secondary-color;
 			font-weight: 700;
+		}
+		div {
+			> div {
+				&:after {
+					@include media-break(768px, 992px) {
+						background: none;
+					}
+				}
+			}
 		}
 		div:nth-last-of-type(1) {
 			> div:after {
@@ -270,6 +299,10 @@ section {
 		    height: 2px;
 		    margin-top: 45px;
 			left: 210px;
+			@include desktop {
+				background: none;
+				position: inherit;
+			}
 		}
 	}
 }
@@ -278,59 +311,79 @@ section {
 %tt-fl {
 	float: left;
 }
-.client_profile_pic {
-    border-radius: 50%;    
-	margin: 0 0 15px 0;  
-	height: 220px;
-}
-.client_profile {
-    @extend %tt-fl;  
-    text-align: center;
-    &.flt {
-    	float: right;
-    }
-}
-.quote_section.flt {
-    @extend %tt-fl;
+.client_area {
+	@include media-break(768px, 992px) {
+		width: 436px;
+		margin: 0 auto;
+	}
 }
 .client_section {
     overflow: hidden;
-}
-.quote_section {
-    width: 643px;  
-	background: #f9f9f9;  
-	position: relative;  
-    padding: 40px 35px;  
-	float: left;  
-	margin: 35px 0 0 30px;
-	p {  
-		font-size: 22px;  
-		color: $body-color;  
-		text-align: center;  
-		position: relative;
-	  	font-weight: 100;
+    @include media-break(768px, 992px) {
+		padding: 35px 0 0 0;
 	}
-	span {
-	    font-size: $h4-size;
-	    color: $primary-color;
+	.client_profile_pic {
+	    border-radius: 50%;    
+		margin: 0 0 15px 0;  
+		height: 220px;
+		@include media-break(768px, 992px) {
+			width: 150px;
+			height: 150px;
+		}
 	}
-	.quote_arrow {
-		position: absolute;
-		background: url(../images/triagle-left.png) no-repeat left top;
-		width: 23px;
-		height: 25px;
-		left: -20px;
-		top: 50%;
-		margin-top: -15.5px;
-	}
-	.quote_arrow2 {
-		@extend .quote_arrow;
-		background: url(../images/triagle-right.png) no-repeat right top;
-		right: -20px;
-		left: auto;
-	}
-	#info-name {
+	.client_profile {
+	    @extend %tt-fl;  
 	    text-align: center;
+	    &.flt {
+	    	float: right;
+	    }
+	}
+	.quote_section {
+	    width: 643px;  
+		background: $light_grey;  
+		position: relative;  
+	    padding: 40px 35px;  
+		float: left;  
+		margin: 35px 0 0 30px;
+		@include media-break(768px, 992px) {
+			width: 495px;
+			margin: 6px 0 0 30px;
+		}
+		p {  
+			font-size: 22px;  
+			color: $body-color;  
+			text-align: center;  
+			position: relative;
+		  	font-weight: 100;
+		  	@include phone {
+		  		font-size: 15px;
+		  	}
+		}
+		span {
+		    font-size: $h4-size;
+		    color: $primary-color;
+		}
+		.quote_arrow {
+			position: absolute;
+			background: url(../images/triagle-left.png) no-repeat left top;
+			width: 23px;
+			height: 25px;
+			left: -20px;
+			top: 50%;
+			margin-top: -15.5px;
+		}
+		.quote_arrow2 {
+			@extend .quote_arrow;
+			background: url(../images/triagle-right.png) no-repeat right top;
+			right: -20px;
+			left: auto;
+		}
+		#info-name {
+		    text-align: center;
+		}
+	}
+	.quote_section.flt {
+	    @extend %tt-fl;
 	}
 }
 
@@ -341,10 +394,16 @@ section {
 	margin-bottom: 0;
 	.contact-part {
 		text-align: center;
+		@include media-break(768px, 992px) {
+			font-size: 30px;
+		}
 		h1 {
 			color: #ffffff;
 			text-transform: uppercase;
 			font-size: $h1-size;
+			@include phone {
+				font-size: $h1-size - 10;
+			}
 			font-weight: 700;
 			margin: 0px;
 		}
@@ -358,6 +417,10 @@ section {
 #logo-part {
 	padding: 60px 0;
 	margin-bottom: 0;
+	@include phone {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 	ul {
 	    padding: 0;  
 	    margin: 0;  
@@ -366,9 +429,21 @@ section {
 	    li {
 		    display: inline;  
 		    margin: 0 20px;
+		    @include media-break(768px, 992px) {
+		    	margin: 0 1%;
+				float: left;
+				width: 18%;
+		    }
+		    @include phone {
+		    	margin: 6px 0px;
+				display: block;
+		    }
 		    a {
 				display: inline-block;
 				margin: 0 17px;
+				@include media-break(768px, 992px) {
+					display: block;  
+				}
 			}
 		}
 	}
@@ -474,6 +549,9 @@ footer {
 	.copy-right {
 		color: #555555;;
 		margin-top: 10px;
+		@include desktop {
+			text-align: center;
+		}
 	}
 }
 

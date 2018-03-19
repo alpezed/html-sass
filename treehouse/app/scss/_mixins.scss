@@ -1,3 +1,11 @@
+@mixin clearFix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
 @mixin backgroundImg($url, $repeat: no-repeat, $size: auto, $pos: center center, $height: initial) {
 	@if $url {
 		background-image: url($url);
@@ -8,9 +16,44 @@
 	}
 }
 
-@mixin list-reset() {
+@mixin list-reset {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
+@mixin media-break($width...) {
+	@if $width == 1 {
+		@media only screen and (max-width: nth($width, 1)) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: nth($width, 1)) and (max-width: nth($width, 2)) {
+			@content;
+		}
+	}
+}
+
+@mixin phone {
+	@media only screen and (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin desktop-large {
+	@media only screen and (max-width: 1200) {
+		@content;
+	}
+}
