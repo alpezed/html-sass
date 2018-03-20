@@ -12,3 +12,11 @@ $secondary-font: null;
 // Headings Size
 $h1-size: 40px;
 $h4-size: 18px;
+
+// Grid breakpoints
+$grid-breakpoint: (
+	desktop-lg: 1200px,
+	desktop: 992px,
+	tablet: 768px,
+	phone: 576px
+);

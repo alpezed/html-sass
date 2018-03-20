@@ -47,6 +47,33 @@ section {
 	margin-bottom: 100px;
 }
 
+/* Custom responsive classes */
+#grid {
+	@include clearFix;
+	> .col {
+		float: left;
+		padding-left: 15px;
+		padding-right: 15px;
+		box-sizing: border-box;
+	}
+}
+
+@for $i from 1 through 6 {
+	#grid.col-#{$i} > .col {
+		width: 100% / $i;
+	}
+}
+
+@each $key, $val in $grid-breakpoint {
+	@media only screen and (max-width: $val) {
+		@for $i from 1 through 6 {
+			#grid.col-#{$key}-#{$i} > .col {
+				width: 100% / $i;
+			}
+		}
+	}
+}
+
 /* Animation Timers */
 @for $i from 1 through 9 {
 	.delay-0#{$i}s {
@@ -540,10 +567,10 @@ footer {
 			%social-icon-bg-hover-pos {
 				background-position-y: -40px;
 			}
-			@each $icons in $social_icons {
-				.#{nth($icons,1)} {
+			@each $icons, $pos in $social_icons {
+				.#{$icons} {
 					@extend %social-icon-bg;
-					background-position: nth($icons,2);
+					background-position: $pos;
 					&:hover {
 						@extend %social-icon-bg-hover-pos;
 					}
