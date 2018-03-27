@@ -1,0 +1,50 @@
+@mixin clearFix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin col($size, $columns: $grid-columns) {
+    width: percentage($size / $columns);
+}
+
+@mixin background-gradient($direction: to right, $color-stop1: $primary-color-light, $color-stop2: $primary-color-dark, $url: null ) {
+    @if $url {
+        background-image: linear-gradient($direction, $color-stop1, $color-stop2), url($url);
+    } @else {
+        background-image: linear-gradient($direction, $color-stop1, $color-stop2);
+    }
+}
+
+@mixin center-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+@mixin media-breakpoint($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {    //600px
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {         // 900px
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {        // 1200px
+        @media only screen and (max-width: 75em) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop-lg {     // 1800px
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+}

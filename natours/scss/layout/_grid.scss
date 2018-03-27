@@ -1,0 +1,47 @@
+.container {
+    max-width: 114rem;
+    margin: 0 auto;
+
+    @include media-breakpoint(tablet) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+}
+
+.grid {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+
+    @include clearFix;
+
+    > [class^="col"] {
+        float: left;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        @include media-breakpoint(tablet) {
+            width: 100% !important;
+            
+            &:not(:last-child) {
+                margin-bottom: 6rem;
+            }
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .col-#{$i} {
+            @include col($i);
+        }
+    }
+}
+
+.no-gutter {
+    margin-right: 0;
+    margin-left: 0;
+
+    > col,
+    > [class*="col"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

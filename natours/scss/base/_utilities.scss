@@ -1,0 +1,37 @@
+.u-center-text {
+    text-align: center;
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+        .u-#{$abbrev}t-#{$size} {
+            #{$prop}-top: $length !important;
+        }
+        .u-#{$abbrev}r-#{$size} {
+            #{$prop}-right: $length !important;
+        }
+        .u-#{$abbrev}b-#{$size} {
+            #{$prop}-bottom: $length !important;
+        }
+        .u-#{$abbrev}l-#{$size} {
+            #{$prop}-left: $length !important;
+        }
+    }
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers-size {
+        .u-#{$abbrev}t-#{$size} {
+            #{$prop}-top: $length !important;
+        }
+        .u-#{$abbrev}r-#{$size} {
+            #{$prop}-right: $length !important;
+        }
+        .u-#{$abbrev}b-#{$size} {
+            #{$prop}-bottom: $length !important;
+        }
+        .u-#{$abbrev}l-#{$size} {
+            #{$prop}-left: $length !important;
+        }
+    }
+}

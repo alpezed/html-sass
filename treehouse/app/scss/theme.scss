@@ -3,7 +3,7 @@
 
 body {
 	color: $body-color;
-	font: 400 14px $primary-font; 
+	font: 400 14px $primary-font;
 }
 h1, .h1, h2, h3, h4, h5, h6 {
 	color: $secondary-color;
@@ -80,11 +80,11 @@ section {
 		animation-delay: unquote('0.' + $i * 1 + 's');
 	}
 }
-.delay-1s { 
-	animation-delay: 1s; 
+.delay-1s {
+	animation-delay: 1s;
 }
-.delay-12s { 
-	animation-delay: 1.2s; 
+.delay-12s {
+	animation-delay: 1.2s;
 }
 
 /* Buttons */
@@ -355,8 +355,8 @@ section {
 		padding: 35px 0 0 0;
 	}
 	.client_profile_pic {
-	    border-radius: 50%;    
-		margin: 0 0 15px 0;  
+	    border-radius: 50%;
+		margin: 0 0 15px 0;
 		height: 220px;
 		@include media-break(768px, 992px) {
 			width: 150px;
@@ -364,27 +364,27 @@ section {
 		}
 	}
 	.client_profile {
-	    @extend %tt-fl;  
+	    @extend %tt-fl;
 	    text-align: center;
 	    &.flt {
 	    	float: right;
 	    }
 	}
 	.quote_section {
-	    width: 643px;  
-		background: $light_grey;  
-		position: relative;  
-	    padding: 40px 35px;  
-		float: left;  
+	    width: 643px;
+		background: $light_grey;
+		position: relative;
+	    padding: 40px 35px;
+		float: left;
 		margin: 35px 0 0 30px;
 		@include media-break(768px, 992px) {
 			width: 495px;
 			margin: 6px 0 0 30px;
 		}
-		p {  
-			font-size: 22px;  
-			color: $body-color;  
-			text-align: center;  
+		p {
+			font-size: 22px;
+			color: $body-color;
+			text-align: center;
 			position: relative;
 		  	font-weight: 100;
 		  	@include phone {
@@ -454,12 +454,12 @@ section {
 		padding-bottom: 10px;
 	}
 	ul {
-	    padding: 0;  
-	    margin: 0;  
-	    list-style: none;  
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
 	    text-align: center;
 	    li {
-		    display: inline;  
+		    display: inline;
 		    margin: 0 20px;
 		    @include media-break(768px, 992px) {
 		    	margin: 0 1%;
@@ -474,7 +474,7 @@ section {
 				display: inline-block;
 				margin: 0 17px;
 				@include media-break(768px, 992px) {
-					display: block;  
+					display: block;
 				}
 			}
 		}

@@ -1,0 +1,165 @@
+.navigation {
+	$nav: &;
+
+	&__button {
+		width: 7rem;
+		height: 7rem;
+		position:  fixed;
+		top: 6rem;
+		right: 6rem;
+		z-index: 200;
+		background: $color-white;
+		border-radius: 50%;
+		cursor: pointer;
+		text-align: center;
+
+		@include media-breakpoint(tablet) {
+			top: 4rem;
+			right: 4rem;
+		}
+
+		@include media-breakpoint(phone) {
+			top: 3rem;
+			right: 3rem;
+		}
+
+		#{$nav}__icon {
+			position: relative;
+			margin-top: 3.5rem;
+
+			&,
+			&::before,
+			&::after {
+				width: 3rem;
+				height: 2px;
+				background-color: $dark-grey-3;
+				display: inline-block;
+			}
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				transition: all .2s;
+			}
+
+			&::before {
+				top: -.8rem;
+			}
+
+			&::after {
+				top: .8rem;
+			}
+		}
+
+		&:hover #{$nav}__icon {
+			&::before { top: -1rem; }
+			&::after { top: 1rem; }
+		}
+	}
+
+	&__checkbox {
+		display: none;
+
+		&:checked {
+			~ #{$nav}__background {
+				transform: scale(80);
+			}
+
+			~ #{$nav}__nav {
+				opacity: 1;
+				visibility: visible;
+				width: 100%;
+			}
+
+			+ #{$nav}__button #{$nav}__icon {
+				background-color: transparent;
+
+				&::before {
+					top: 0;
+					transform: rotate(135deg);
+				}
+
+				&::after {
+					top: 0;
+					transform: rotate(-135deg);
+				}
+			}
+		}
+
+	}
+
+	&__background {
+		width: 6rem;
+		height: 6rem;
+		position: fixed;
+		top: 6.5rem;
+		right: 6.5rem;
+		z-index: 100;
+		border-radius: 50%;
+		background-image: radial-gradient($primary-color-light, $primary-color-dark);
+		box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+		transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+		@include media-breakpoint(tablet) {
+			top: 4.5rem;
+			right: 4.5rem;
+		}
+
+		@include media-breakpoint(phone) {
+			top: 3.5rem;
+			right: 3.5rem;
+		}
+	}
+
+	&__nav {
+		width: 100%;
+		height: 100vh;
+		position: fixed; 
+		top: 0;
+		left: 0;
+		z-index: 150;
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+	    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	&__list {
+		@include center-element;
+		list-style: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	&__item {
+		margin: 1rem;
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			display: inline-block;
+			font-size: 3rem;
+			color: $color-white;
+			font-weight: 300;
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: 1rem 1.5rem;
+			background-image: linear-gradient(120deg, transparent 50%, transparent 50%, $color-white 0%);
+			background-size: 220%;
+			transition: all .4s;
+		}
+		
+		&:hover,
+		&:active {
+			color: $primary-color;
+			background-position: 100%;
+		}
+
+		span {
+			margin-right: 1.5rem;
+		}
+	}
+}
