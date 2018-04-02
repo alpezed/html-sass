@@ -1,6 +1,7 @@
 .DS_Store
 bootstrap4/node_modules
 treehouse/node_modules
+*/node_modules
 treehouse/dist
 .tmp
 .sass-cache
