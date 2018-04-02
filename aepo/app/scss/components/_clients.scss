@@ -1,0 +1,12 @@
+.client {
+
+    &__link {
+        display: block;
+        opacity: .3;
+        transition: all .2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

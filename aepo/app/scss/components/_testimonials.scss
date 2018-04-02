@@ -1,0 +1,23 @@
+.testimonials {
+    width: 100%;
+    margin-bottom: 4rem;
+
+    &__avatar {
+        margin-right: 2rem;
+    }
+
+    &__content {
+        color: inherit;
+        p {
+            color: inherit;
+            font-style: italic;
+        }
+    }
+
+    &__name {
+        strong {
+            color: $primary;
+        }
+    }
+
+}

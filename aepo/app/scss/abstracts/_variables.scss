@@ -1,0 +1,36 @@
+// Typography
+$font-family-sans-serif: 'Helvetica LT Std', Arial, sans-serif;
+$headings-font-family: 'Avenir', Arial, sans-serif;
+
+// Color
+$primary: #313f48;
+$primary-light: #54636D;
+$secondary: #989fa4;
+$secondary-dark: #404f5a;
+
+$color-light-grey: #fafbfc;
+$color-white: #fff;
+$color-black: #000;
+
+$input-bg-color: #f4f5f6;
+$input-border-color: #e4e9ec;
+$input-border-color-focus: #72c3e2;
+
+$body-color: $primary-light;
+
+// Spacer
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 3.5),
+  7: ($spacer * 4),
+  8: ($spacer * 4.5),
+  9: ($spacer * 5),
+  10: ($spacer * 5.5),
+), $spacers);

@@ -1,0 +1,36 @@
+.footer {
+    padding: 70px 0;
+    font-size: 12px;
+    color: $primary-light;
+
+    &__copyright {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    &__logo {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    &__nav {
+        text-transform: uppercase;
+
+        ul {
+            li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+        }
+
+        a {
+            color: inherit;
+            font-weight: 500;
+        }
+    }
+
+    &__copyright-text {
+        display: block;
+        margin-bottom: 0;
+    }
+}

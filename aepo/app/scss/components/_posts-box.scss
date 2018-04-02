@@ -1,0 +1,133 @@
+.postbox {
+
+    &__item {
+        color: $color-white;
+        padding: 4rem 3rem;
+        transition: all .2s;
+        min-height: 300px;
+        background-size: cover;
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 13px;
+        }
+
+        &:before {
+            @include absFull;
+            content: "";
+            background-color: rgba($color-black, .3);
+            transform: scale(.3);
+            transition: all .2s ease-out .2s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 4rem rgba($color-black, .2);
+
+            &:before {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+
+        &--ext-link {
+            @include absFull;
+            z-index: 1;
+        }
+
+        &-california {
+            background-image: url('../../images/9.JPG');
+        }
+
+        &-oregon {
+            background-image: url('../../images/5.JPG');
+        }
+
+        &-japan {
+            background-image: url('../../images/8.JPG');
+        }
+
+        &-heading {
+            color: inherit;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: .3rem;
+            transition: transform .4s;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 16px;
+            }
+        }
+
+        &:hover > &-heading {
+            transform: scale(0);
+        }
+
+        &-date {
+            opacity: .8;
+        }
+
+        &-content {
+            letter-spacing: 1px;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: all .5s;
+            transform: scale(0);
+
+            a {
+                color: inherit;
+            }
+        }
+
+        &:hover &-content {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .btn {
+            color: inherit;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0;
+        }
+
+        @media only screen and (max-width: 991.98px), only screen and (hover: none) {
+            transform: none !important;
+            box-shadow: 0 0 4rem rgba($color-black, .2);
+
+            &:before {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+
+            & > &-heading {
+                transform: scale(0);
+            }
+
+            &-content {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+                padding: 0 20px;
+                width: 100%;
+            }
+
+            .btn {
+                font-size: 13px;
+                min-width: auto;
+                min-height: auto;
+            }
+        }
+
+    }
+
+}

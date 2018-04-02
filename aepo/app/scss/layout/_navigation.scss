@@ -1,0 +1,39 @@
+.navbar {
+    @include media-breakpoint-up(lg) {
+        min-height: 72px;
+    }
+
+    .nav-item {
+        font-size: 12px;
+
+        &.active {
+            font-weight: bold;
+
+            .nav-link {
+                color: $primary;
+            }
+        }
+
+        .nav-link {
+            text-transform: uppercase;
+            transition: all .2s;
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .navbar-toggler {
+        border: 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
